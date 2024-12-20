@@ -241,3 +241,84 @@ select * from products where type not in ('Stationary', 'Furniture');
 ```sql
 select * from products where price between 10000 and 30000;
 ```
+
+SQL: Structured Query Language
+
+- DDL: Data Definition Language
+  - CREATE DATABASE
+  - DROP DATABASE
+  - CREATE TABLE
+  - DROP TABLE
+  - ALTER TABLE
+- DML: Data Manipulation Language
+  - INSERT INTO
+  - DELETE FROM
+  - UPDATE
+  - SELECT
+- DCL: Data Control Language
+  - GRANT
+  - REVOKE
+- TCL: Transaction Control Language
+
+  - COMMIT
+  - ROLLBACK
+
+- to update the price of the product with id 1
+
+```sql
+update products set price = 15 where id = 1;
+```
+
+- to delete the product with id 1
+
+```sql
+delete from products where id = 1;
+```
+
+- to select distinct branches from the products table
+
+```sql
+select distinct branch from products;
+```
+
+- to find the sum of the price of all the products
+
+```sql
+select sum(price) from products;
+```
+
+- to find the min, max, sum, avg, stddev of the price of all the products
+
+```sql
+select min(price), max(price), sum(price), avg(price), stddev(price) from products;
+```
+
+- to find the sum of the price of all the products with respect to the grouped branches
+
+```sql
+select branch, sum(price) from products group by branch;
+```
+
+- to order the products based on the price in ascending order
+
+```sql
+select * from products order by price;
+```
+
+- to order the products based on the price in descending order
+
+```sql
+select * from products order by price desc;
+```
+
+- to limit the number of rows to be displayed
+
+```sql
+select * from products limit 5;
+```
+
+- to limit the number of rows to be displayed starting from the 5th row
+
+```sql
+select * from products limit 5 offset 5;
+```
