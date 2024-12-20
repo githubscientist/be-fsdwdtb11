@@ -169,3 +169,75 @@ VALUES
 (14, 'Cupboard', 8000, 10, 'Furniture', 'Godrej', 'Chennai'),
 (15, 'Almirah', 7000, 10, 'Furniture', 'Nilkamal', 'Mumbai');
 ```
+
+- To select all the columns from the products table
+
+```sql
+select * from products;
+```
+
+- to select specific columns from the products table
+
+```sql
+select name, price from products;
+```
+
+- to select products with branch as Chennai
+
+```sql
+select * from products where branch = 'Chennai';
+```
+
+- to select products with branch not as Chennai
+
+```sql
+select * from products where branch != 'Chennai';
+```
+
+- to select products with price greater than 10000
+
+```sql
+select * from products where price > 10000;
+```
+
+- to select products with price greater than or equal to 10000
+
+```sql
+select * from products where price >= 10000;
+```
+
+- to select products with price greater than 10000 and less than 30000 (inclusive)
+
+```sql
+select * from products where price > 10000 and price <= 30000;
+```
+
+- to select products with branch as 'Chennai' or branch as 'Mumbai'
+
+```sql
+select * from products where branch = 'Chennai' or branch = 'Mumbai';
+```
+
+- to select products where type is Stationary or Furniture (using or operator)
+
+```sql
+select * from products where type = 'Stationary' or type = 'Furniture';
+```
+
+- to select products where type is Stationary or Furniture (using in operator)
+
+```sql
+select * from products where type in ('Stationary', 'Furniture');
+```
+
+- to select products where type is not Stationary or Furniture
+
+```sql
+select * from products where type not in ('Stationary', 'Furniture');
+```
+
+- to select products where price is between 10000 and 30000 (using between)
+
+```sql
+select * from products where price between 10000 and 30000;
+```
