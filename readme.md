@@ -322,3 +322,77 @@ select * from products limit 5;
 ```sql
 select * from products limit 5 offset 5;
 ```
+
+## Day - 2 Topics
+
+- [x] Normalization
+- [ ] Select Queries
+- [ ] Joins
+- [ ] DB Model Design
+- [ ] Pros & Cons of Relational databases
+- [ ] Relational Database Vs Non Relational Database
+
+### Normalization
+
+- Normalization is a process of organizing the data in the database.
+- It is used to reduce redundancy and dependency by dividing the large table into smaller tables and defining relationships between them.
+- It is used to eliminate the data anomalies.
+- It is used to improve the data integrity (accuracy and consistency of data).
+
+### Example Table: Products
+
+| id  | name            | price | quantity | type        | brand     | branch  |
+| --- | --------------- | ----- | -------- | ----------- | --------- | ------- |
+| 1   | Pen             | 10    | 100      | Stationary  | Reynolds  | Chennai |
+| 2   | Pencil          | 5     | 200      | Stationary  | Reynolds  | Chennai |
+| 3   | Book            | 100   | 50       | Stationary  | Reynolds  | Mumbai  |
+| 4   | Laptop          | 50000 | 10       | Electronics | Samsung   | Chennai |
+| 5   | Mobile          | 20000 | 20       | Electronics | Samsung   | Mumbai  |
+| 6   | TV              | 30000 | 5        | Electronics | Samsung   | Chennai |
+| 7   | AC              | 40000 | 5        | Electronics | Samsung   | Mumbai  |
+| 8   | Fridge          | 30000 | 5        | Electronics | Samsung   | Chennai |
+| 9   | Washing Machine | 20000 | 5        | Electronics | Samsung   | Mumbai  |
+| 10  | Chair           | 500   | 50       | Furniture   | Nilkamal  | Chennai |
+| 11  | Table           | 1000  | 20       | Furniture   | Nilkamal  | Mumbai  |
+| 12  | Sofa            | 5000  | 10       | Furniture   | Pepperfry | Chennai |
+| 13  | Bed             | 10000 | 10       | Furniture   | Pepperfry | Mumbai  |
+| 14  | Cupboard        | 8000  | 10       | Furniture   | Pepperfry | Chennai |
+| 15  | Almirah         | 7000  | 10       | Furniture   | Nilkamal  | Mumbai  |
+
+- Splitting Products table into multiple tables
+
+1. Products Table
+
+| id  | name | price | quantity | type        | brand_id | branch_id |
+| --- | ---- | ----- | -------- | ----------- | -------- | --------- |
+| 1   | Pen  | 10    | 100      | Stationary  | 1        | 1         |
+| 2   | Pen  | 5     | 200      | Stationary  | 1        | 1         |
+| 3   | Pen  | 100   | 50       | Stationary  | 1        | 2         |
+| 4   | Pen  | 50000 | 10       | Electronics | 2        | 1         |
+| 5   | Pen  | 20000 | 20       | Electronics | 2        | 2         |
+| 6   | Pen  | 30000 | 5        | Electronics | 2        | 1         |
+| 7   | Pen  | 40000 | 5        | Electronics | 2        | 2         |
+| 8   | Pen  | 30000 | 5        | Electronics | 2        | 1         |
+| 9   | Pen  | 20000 | 5        | Electronics | 2        | 2         |
+| 10  | Pen  | 500   | 50       | Furniture   | 3        | 1         |
+| 11  | Pen  | 1000  | 20       | Furniture   | 3        | 2         |
+| 12  | Pen  | 5000  | 10       | Furniture   | 4        | 1         |
+| 13  | Pen  | 10000 | 10       | Furniture   | 4        | 2         |
+| 14  | Pen  | 8000  | 10       | Furniture   | 4        | 1         |
+| 15  | Pen  | 7000  | 10       | Furniture   | 3        | 2         |
+
+2. Brands Table
+
+| id  | name      |
+| --- | --------- |
+| 1   | Reynolds  |
+| 2   | Samsung   |
+| 3   | Nilkamal  |
+| 4   | Pepperfry |
+
+3. Branches Table
+
+| id  | name    |
+| --- | ------- |
+| 1   | Chennai |
+| 2   | Mumbai  |
