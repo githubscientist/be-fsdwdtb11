@@ -397,7 +397,7 @@ select * from products limit 5 offset 5;
 | 1   | Chennai |
 | 2   | Mumbai  |
 
-Question: Select the price of the products with brand as 'Samsung'
+Question: Select the name and price of the products with brand as 'Samsung'
 
 ```sql
 create table products (
@@ -470,3 +470,165 @@ values
 (1, 'Chennai'),
 (2, 'Mumbai');
 ```
+
+### Joins
+
+- Joins are used to combine rows from two or more tables based on a related column between them.
+- Types of Joins:
+  - Inner Join: Returns the rows when there is a match in both tables.
+  - Outer Join
+    - Left Join: Returns all the rows from the left table and the matched rows from the right table.
+    - Right Join: Returns all the rows from the right table and the matched rows from the left table.
+    - Full Join: Returns all the rows when there is a match in one of the tables.
+
+### Example
+
+1. Table1
+
+| c1  | c2   | c3  |
+| --- | ---- | --- |
+| 1   | 1000 | x1  |
+| 2   | 2000 | x2  |
+| 3   | 3000 | x1  |
+
+2. Table2
+
+| c4  | c5   |
+| --- | ---- |
+| x1  | 4000 |
+| x3  | 5000 |
+
+```sql
+create table table1 (
+    c1 int,
+    c2 int,
+    c3 varchar(255)
+)
+```
+
+```sql
+insert into table1 (c1, c2, c3)
+values
+(1, 1000, 'x1'),
+(2, 2000, 'x2'),
+(3, 3000, 'x1');
+```
+
+```sql
+create table table2 (
+    c4 varchar(255),
+    c5 int
+)
+```
+
+```sql
+insert into table2 (c4, c5)
+values
+('x1', 4000),
+('x3', 5000);
+```
+
+- Inner Join
+
+```sql
+select table1.c1, table1.c2, table2.c5 from table1 inner join table2 on table1.c3 = table2.c4;
+```
+
+- Left Join
+
+```sql
+select table1.c1, table1.c2, table2.c5 from table1 left join table2 on table1.c3 = table2.c4;
+```
+
+- Right Join
+
+```sql
+select table1.c1, table1.c2, table2.c5 from table1 right join table2 on table1.c3 = table2.c4;
+```
+
+- Full Join
+
+```sql
+select table1.c1, table1.c2, table2.c5 from table1 left join table2 on table1.c3 = table2.c4
+union
+select table1.c1, table1.c2, table2.c5 from table1 right join table2 on table1.c3 = table2.c4;
+```
+
+### DB Model Design
+
+- DB Model Design is a process of designing the database.
+- It is used to define the structure of the database.
+
+Example: E-Commerce Website
+
+Features of the Website:
+
+- Users can register and login.
+- Users can view the products.
+- Users can add the products to the cart.
+- Users can place the order.
+
+Tables:
+
+1. Users Table
+2. Products Table
+3. Cart Table
+4. Orders Table
+
+Columns in each table:
+
+1. Users Table
+
+   - id: int Primary Key
+   - name varchar(255)
+   - email varchar(255)
+   - password varchar(255)
+   - role (admin, user) varchar(255)
+   - created_at datetime
+   - updated_at datetime
+
+2. Products Table
+
+   - id int Primary Key
+   - name varchar(255)
+   - price int
+   - quantity int
+   - type varchar(255)
+   - brand varchar(255)
+   - branch varchar(255)
+   - created_at datetime
+   - updated_at datetime
+
+3. Cart Table
+
+   - id int Primary Key
+   - user_id int Foreign Key
+   - product_id int Foreign Key
+   - quantity int
+   - created_at datetime
+   - updated_at datetime
+
+4. Orders Table
+   - id int Primary Key
+   - user_id int Foreign Key
+   - product_id int Foreign Key
+   - quantity int
+   - status (ordered, shipped, delivered) varchar(255)
+   - created_at datetime
+   - updated_at datetime
+
+Relationships:
+
+1. Users Table and Products Table
+
+   - One User can have multiple products.
+   - One Product can have multiple users.
+
+2. Users Table and Cart Table
+
+   - One User can have multiple products in the cart.
+   - One Product can have multiple users in the cart.
+
+3. Users Table and Orders Table
+
+   - One User can have multiple orders.
