@@ -363,23 +363,23 @@ select * from products limit 5 offset 5;
 
 1. Products Table
 
-| id  | name | price | quantity | type        | brand_id | branch_id |
-| --- | ---- | ----- | -------- | ----------- | -------- | --------- |
-| 1   | Pen  | 10    | 100      | Stationary  | 1        | 1         |
-| 2   | Pen  | 5     | 200      | Stationary  | 1        | 1         |
-| 3   | Pen  | 100   | 50       | Stationary  | 1        | 2         |
-| 4   | Pen  | 50000 | 10       | Electronics | 2        | 1         |
-| 5   | Pen  | 20000 | 20       | Electronics | 2        | 2         |
-| 6   | Pen  | 30000 | 5        | Electronics | 2        | 1         |
-| 7   | Pen  | 40000 | 5        | Electronics | 2        | 2         |
-| 8   | Pen  | 30000 | 5        | Electronics | 2        | 1         |
-| 9   | Pen  | 20000 | 5        | Electronics | 2        | 2         |
-| 10  | Pen  | 500   | 50       | Furniture   | 3        | 1         |
-| 11  | Pen  | 1000  | 20       | Furniture   | 3        | 2         |
-| 12  | Pen  | 5000  | 10       | Furniture   | 4        | 1         |
-| 13  | Pen  | 10000 | 10       | Furniture   | 4        | 2         |
-| 14  | Pen  | 8000  | 10       | Furniture   | 4        | 1         |
-| 15  | Pen  | 7000  | 10       | Furniture   | 3        | 2         |
+| id  | name             | price | quantity | type        | brand_id | branch_id |
+| --- | ---------------- | ----- | -------- | ----------- | -------- | --------- |
+| 1   | Pen              | 10    | 100      | Stationary  | 1        | 1         |
+| 2   | Pencil           | 5     | 200      | Stationary  | 1        | 1         |
+| 3   | Book             | 100   | 50       | Stationary  | 1        | 2         |
+| 4   | Lapop            | 50000 | 10       | Electronics | 2        | 1         |
+| 5   | Mobile           | 20000 | 20       | Electronics | 2        | 2         |
+| 6   | TV               | 30000 | 5        | Electronics | 2        | 1         |
+| 7   | AC               | 40000 | 5        | Electronics | 2        | 2         |
+| 8   | Fridge           | 30000 | 5        | Electronics | 2        | 1         |
+| 9   | Washhing Machine | 20000 | 5        | Electronics | 2        | 2         |
+| 10  | Chair            | 500   | 50       | Furniture   | 3        | 1         |
+| 11  | Table            | 1000  | 20       | Furniture   | 3        | 2         |
+| 12  | Sofa             | 5000  | 10       | Furniture   | 4        | 1         |
+| 13  | Bed              | 10000 | 10       | Furniture   | 4        | 2         |
+| 14  | Cupboard         | 8000  | 10       | Furniture   | 4        | 1         |
+| 15  | Almirah          | 7000  | 10       | Furniture   | 3        | 2         |
 
 2. Brands Table
 
@@ -396,3 +396,9 @@ select * from products limit 5 offset 5;
 | --- | ------- |
 | 1   | Chennai |
 | 2   | Mumbai  |
+
+Question: Select the price of the products with brand as 'Samsung'
+
+```sql
+
+```
