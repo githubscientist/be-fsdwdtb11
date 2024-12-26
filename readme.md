@@ -103,3 +103,20 @@
     - `const { Router } = require('express');`
     - File extension should be `.js`
     - for exporting use `module.exports` or `exports.Router = Router;`
+
+### Date Comparison in MongoDB
+
+- To compare dates in MongoDB, we can use the `$gte` and `$lte` operators.
+- Example:
+
+```javascript
+db.collection.find({
+  createdAt: {
+    $gte: new Date("2021-01-01"),
+    $lte: new Date("2021-12-31"),
+  },
+});
+```
+
+- ISODate format: `2021-01-01T00:00:00.000Z`
+- ISODate means the date is in UTC format (ISO means International Standard Organization)
