@@ -6,9 +6,9 @@
 - [x] Understanding Nodemodules
 - [x] Package.json , package-lock.json
 - [x] Dependencies Vs dev dependencies
-- [ ] Built In , third party & custom packages
-- [ ] Filesystem in nodejs
+- [x] Built In , third party & custom packages
 - [ ] http module
+- [ ] Filesystem in nodejs
 
 ### What is Node JS?
 
@@ -43,11 +43,63 @@
 
 - `dependencies` are the packages that are required for the application to run.
 - Dependencies are required at runtime. They are global dependencies.
+- Use `npm install package_name` to install a package as a dependency
 
 - `devDependencies` are the packages that are only required during development.
 - Dev dependencies are required during development. They are local dependencies.
+- Use `npm install -D package_name` to install a package as a dev dependency
 
 ### Let us install a package
 
 - Run `npm install package_name` to install a package
 - Package example: `npm install body-parser`
+
+### Built In , third party & custom packages
+
+- `Built In Packages`: These are the packages that are available by default in Node.js
+- Example:
+
+  - `fs` - To handle the file system
+  - `http` - To create a server(http server)
+  - `path` - To handle file paths
+  - `os` - Examples: To get the information about the operating system (os.mkdir(), os.rmdir())
+
+- `Third Party Packages`: These are the packages that are not available by default in Node.js and are created by the community.
+- Example:
+
+  - `express` - To create a server
+  - `body-parser` - To parse the body of the request
+  - `nodemon` - To restart the server automatically
+  - `mongoose` - To connect to MongoDB
+  - `mysql` - To connect to MySQL
+  - `cookie-parser` - To parse the cookies
+  - `cors` - To enable CORS
+  - `dotenv` - To load environment variables
+  - `jsonwebtoken` - To generate JWT tokens
+  - `bcrypt` - To hash the password
+  - `multer` - To upload files
+  - `morgan` - To log the requests
+  - `nodemailer` - To send emails
+
+- `Custom Packages`: These are the packages that are created by the developer.
+- Example:
+
+  - `my-package` - Custom package created by the developer
+  - `logger` - middleware to log the requests
+  - `auth` - middleware to authenticate the user using JWT and passport
+  - `upload` - middleware to upload files
+  - `db` - middleware to connect to the database
+
+### Imports
+
+- There are two types of imports in Node.js
+  - ES6 Imports
+    - `import express from 'express';`
+    - `import { Router } from 'express';`
+    - File extension should be `.mjs`
+    - for exporting use `export default` or `export { Router };`
+  - CommonJS Imports
+    - `const express = require('express');`
+    - `const { Router } = require('express');`
+    - File extension should be `.js`
+    - for exporting use `module.exports` or `exports.Router = Router;`
