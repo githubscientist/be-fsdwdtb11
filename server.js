@@ -4,10 +4,10 @@ const http = require('http');
 // create a server object
 const server = http.createServer((request, response) => {
     // set the response header
-    response.writeHead(200, { 'Content-Type': 'text/plain' });
+    response.writeHead(200, { 'Content-Type': 'application/json' });
 
     // set the response body
-    response.end('Hello World\n');
+    response.end(JSON.stringify({ message: 'Hello World!' }));
 });
 
 // listen to the server on port 3000
