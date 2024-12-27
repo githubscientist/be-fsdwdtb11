@@ -5,9 +5,18 @@ const http = require('http');
 const server = http.createServer((request, response) => {
     // set the response header
     response.writeHead(200, { 'Content-Type': 'application/json' });
-
-    // set the response body
-    response.end(JSON.stringify({ message: 'Hello World!' }));
+    if (request.url === '/posts') {
+        // endpoints for posts
+        if (request.method === 'GET') {
+            response.write(JSON.stringify({ message: 'GET POSTS' }));
+        } else if (request.method === 'POST') {
+            response.write(JSON.stringify({ message: 'POST POSTS' }))
+        }
+    } else if (request.url === '/comments') {
+        // endpoints for comments
+        response.write(JSON.stringify({ message: 'Comments' }));
+    }
+    response.end();
 });
 
 // listen to the server on port 3000
