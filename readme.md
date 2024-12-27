@@ -5,8 +5,8 @@
 - [x] What is ExpressJS?
 - [x] Launch app.listen()
 - [x] What is middleware?
-- [ ] Understanding inbuilt middlewares
-- [ ] Custom middlewares
+- [x] Understanding inbuilt middlewares
+- [x] Custom middlewares
 
 ### What is ExpressJS?
 
