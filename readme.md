@@ -3,10 +3,10 @@
 ## Topics
 
 - [x] What is MVC?
-- [ ] Split our existing code to MVC pattern
-- [ ] Follow upcoming code in MVC pattern
-- [ ] Getting Connected with MongoDB
-- [ ] What is Mongoose?
+- [x] Split our existing code to MVC pattern
+- [x] Follow upcoming code in MVC pattern
+- [x] Getting Connected with MongoDB
+- [x] What is Mongoose?
 - [ ] Creating & understanding Schemas using Mongoose
 
 ## Notes
@@ -38,3 +38,12 @@
 1. Models: To represent the data structure.
 2. Routes: To handle the incoming requests.
 3. Controllers: To process the incoming requests.
+
+### What is Mongoose?
+
+- Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js.
+- It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
+
+### What is dotenv?
+
+- Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
