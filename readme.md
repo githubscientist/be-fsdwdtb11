@@ -2,32 +2,39 @@
 
 ## Topics
 
-- [x] What is ExpressJS?
-- [x] Launch app.listen()
-- [x] What is middleware?
-- [x] Understanding inbuilt middlewares
-- [x] Custom middlewares
+- [x] What is MVC?
+- [ ] Split our existing code to MVC pattern
+- [ ] Follow upcoming code in MVC pattern
+- [ ] Getting Connected with MongoDB
+- [ ] What is Mongoose?
+- [ ] Creating & understanding Schemas using Mongoose
 
-### What is ExpressJS?
+## Notes
 
-- ExpressJS is a minimal and flexible Node.js web application framework that provides a robust set of features for web applications.
-- It is an open-source framework that is used to build web applications in Node.
-- It is used over the vanilla Node.js http module because it provides a lot of features that are required in web development like routing, middleware, etc. and it is very easy to use and manage.
+### What is MVC?
 
-### Launch app.listen()
+- MVC stands for Model-View-Controller.
+- It is a software design pattern that divides the program logic into three interconnected elements.
 
-- The `app.listen()` function is used to bind and listen the connections on the specified host and port.
+1. Model
 
-### What is middleware?
+- It represents the data structure.
+- It is responsible for managing the data of the application.
+- It responds to the request from the view and to the instructions from the controller to update itself.
 
-- Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
-- The next middleware function is commonly denoted by a variable named next.
+2. View
 
-### Understanding inbuilt middlewares
+- It represents the visualization of the data that model contains.
+- It is responsible for displaying the data.
+- It gets the data from the model and sends it to the view.
 
-- Express has a lot of inbuilt middlewares that can be used to perform various tasks like parsing the request body, serving static files, etc.
+3. Controller
 
-### Custom middlewares
+- It acts as an interface between Model and View components to process all the business logic and incoming requests.
+- It receives the input, processes the input, and produces the output.
 
-- Custom middlewares are functions that can be used to perform tasks like logging, authentication, etc. in the request-response cycle.
+### Split our existing code to MVC pattern - Backend Application
 
+1. Models: To represent the data structure.
+2. Routes: To handle the incoming requests.
+3. Controllers: To process the incoming requests.
