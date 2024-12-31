@@ -8,6 +8,9 @@ const jobRouter = require('./routes/jobRoutes');
 // create an express app
 const app = express();
 
+// use the express json middleware
+app.use(express.json());
+
 // use the logger middleware
 app.use(logger);
 // app.use(morgan('dev'));
