@@ -62,8 +62,15 @@ const authController = {
                 { expiresIn: '1h' }
             );
 
+            // set the token in the response cookies
+            response.cookie('token', token, {
+                httpOnly: true,
+                secure: true,
+                sameSite: 'none'
+            });
+
             // send a response
-            response.json({ token, message: 'User logged in successfully' });
+            response.json({ message: 'User logged in successfully' });
 
         } catch (error) {
             response.status(500).json({ message: error.message });
@@ -71,7 +78,11 @@ const authController = {
     },
     logout: async (request, response) => {
         try {
+            // clear the token from the cookies
+            response.clearCookie('token');
 
+            // send a response
+            response.json({ message: 'User logged out successfully' });
         } catch (error) {
             response.status(500).json({ message: error.message });
         }
