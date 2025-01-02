@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const bcrypt = require('bcrypt');
 
 const authController = {
     register: async (request, response) => {
@@ -13,11 +14,13 @@ const authController = {
                 return response.status(400).json({ message: 'User already exists' });
             }
 
+            const passwordHash = await bcrypt.hash(password, 10);
+
             // create user object
             const newUser = new User({
                 name,
                 email,
-                password
+                password: passwordHash
             });
 
             // save user
